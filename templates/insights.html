@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Heart Attack Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <span class="brand-name">Heart Attack Prediction</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/predict" class="nav-link">Predict Risk</a></li>
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Insights Content -->
+    <section class="insights-section">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">How It Works</h1>
+                <p class="page-subtitle">Understanding the science and technology behind our AI-powered predictions</p>
+            </div>
+
+            <!-- Project Goal -->
+            <div class="content-card">
+                <h2 class="content-title">Project Goal</h2>
+                <p class="content-text">
+                    Our Heart Attack Prediction system is designed to build an <strong>AI-based clinical decision
+                        support system</strong>
+                    that:
+                </p>
+                <ul class="content-list">
+                    <li>Predicts heart attack risk accurately using advanced machine learning algorithms</li>
+                    <li>Helps doctors and healthcare professionals understand <em>why</em> a patient is at risk through
+                        explainable AI</li>
+                    <li>Supports early intervention and preventive care strategies</li>
+                    <li>Provides actionable insights for better clinical decision-making</li>
+                </ul>
+            </div>
+
+            <!-- Process Steps -->
+            <div class="process-section">
+                <h2 class="section-title">The AI & ML Process</h2>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Data Understanding & Preprocessing</h3>
+                            <p>
+                                We analyze medical features including age, cholesterol, blood pressure, chest pain type,
+                                and heart rate. Missing values are handled and features are scaled to ensure optimal
+                                model performance.
+                            </p>
+                            <div class="step-highlight">
+                                <strong>Why it's critical:</strong> Healthcare data requires careful preprocessing to
+                                ensure
+                                accuracy and reliability in predictions.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Exploratory Data Analysis (EDA)</h3>
+                            <p>
+                                We identify key correlations between features and heart attack risk, highlighting the
+                                most
+                                influential medical indicators through comprehensive statistical analysis and
+                                visualization.
+                            </p>
+                            <div class="step-highlight">
+                                <strong>Key Findings:</strong> Chest pain type, maximum heart rate, and ST depression
+                                are
+                                among the strongest predictors of heart attack risk.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Model Training & Selection</h3>
+                            <p>
+                                Multiple ML models are trained and compared:
+                            </p>
+                            <ul>
+                                <li><strong>Random Forest:</strong> Ensemble method for robust predictions</li>
+                                <li><strong>Gradient Boosting:</strong> Sequential learning for high accuracy</li>
+                                <li><strong>Logistic Regression:</strong> Interpretable baseline model</li>
+                                <li><strong>SVM:</strong> Complex pattern recognition</li>
+                            </ul>
+                            <div class="step-highlight">
+                                <strong>Selection Criteria:</strong> The best-performing model is selected based on
+                                accuracy,
+                                precision, recall, and cross-validation scores.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Risk Categorization</h3>
+                            <p>
+                                Raw predictions are converted into meaningful categories for better clinical usability:
+                            </p>
+                            <ul>
+                                <li><span class="risk-badge low">Low Risk</span>
+                                    < 30% probability</li>
+                                <li><span class="risk-badge medium">Medium Risk</span> 30-70% probability</li>
+                                <li><span class="risk-badge high">High Risk</span> > 70% probability</li>
+                            </ul>
+                            <div class="step-highlight">
+                                <strong>Real-world Impact:</strong> This categorization helps healthcare providers
+                                prioritize patient care and intervention strategies.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Explainable AI</h3>
+                            <p>
+                                We identify which features contribute most to predictions, providing interpretable
+                                explanations that build trust and transparency in healthcare AI.
+                            </p>
+                            <div class="features-importance">
+                                <div class="importance-item">
+                                    <span>Chest Pain Type</span>
+                                    <div class="importance-bar">
+                                        <div style="width: 25%; background: #667eea;"></div>
+                                    </div>
+                                    <span>25%</span>
+                                </div>
+                                <div class="importance-item">
+                                    <span>Max Heart Rate</span>
+                                    <div class="importance-bar">
+                                        <div style="width: 18%; background: #764ba2;"></div>
+                                    </div>
+                                    <span>18%</span>
+                                </div>
+                                <div class="importance-item">
+                                    <span>ST Depression</span>
+                                    <div class="importance-bar">
+                                        <div style="width: 15%; background: #f093fb;"></div>
+                                    </div>
+                                    <span>15%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clinical Features -->
+            <div class="features-section">
+                <h2 class="section-title">Clinical Features Analyzed</h2>
+                <div class="features-grid-insights">
+                    <div class="feature-item">
+                        <h4>Age</h4>
+                        <p>Patient's age in years - a primary risk factor for cardiovascular disease</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Chest Pain Type</h4>
+                        <p>Classification of chest pain (typical angina, atypical angina, non-anginal, asymptomatic)</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Blood Pressure</h4>
+                        <p>Resting blood pressure measurement in mmHg</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Cholesterol</h4>
+                        <p>Serum cholesterol level in mg/dL</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Max Heart Rate</h4>
+                        <p>Maximum heart rate achieved during exercise testing</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>ST Depression</h4>
+                        <p>ST segment depression induced by exercise relative to rest</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Major Vessels</h4>
+                        <p>Number of major vessels colored by fluoroscopy (0-4)</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Thalassemia</h4>
+                        <p>Blood disorder test results (normal, fixed defect, reversible defect)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interview Preparation -->
+            <div class="interview-section">
+                <h2 class="section-title">Interview-Ready Explanation</h2>
+                <div class="content-card">
+                    <h3>How to Present This Project</h3>
+                    <div class="interview-points">
+                        <div class="interview-point">
+                            <strong>Problem Statement:</strong>
+                            <p>Heart disease is the leading cause of death globally. Early detection and risk assessment
+                                can save lives through timely intervention.</p>
+                        </div>
+                        <div class="interview-point">
+                            <strong>Solution:</strong>
+                            <p>HeartCare AI uses machine learning to predict heart attack risk based on clinical
+                                parameters,
+                                providing both accurate predictions and explainable insights.</p>
+                        </div>
+                        <div class="interview-point">
+                            <strong>Technical Approach:</strong>
+                            <p>Implemented multiple ML algorithms, performed comprehensive EDA, applied feature
+                                engineering,
+                                and selected the best model through rigorous evaluation.</p>
+                        </div>
+                        <div class="interview-point">
+                            <strong>Impact:</strong>
+                            <p>Enables healthcare professionals to make data-driven decisions, prioritize high-risk
+                                patients,
+                                and implement preventive care strategies effectively.</p>
+                        </div>
+                        <div class="interview-point">
+                            <strong>Key Achievements:</strong>
+                            <ul>
+                                <li>Achieved 95.8% accuracy in risk prediction</li>
+                                <li>Implemented explainable AI for clinical transparency</li>
+                                <li>Built production-ready web application with modern UI/UX</li>
+                                <li>Created comprehensive analytics dashboard for insights</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-section">
+                <h2>Ready to Try Our System?</h2>
+                <p>Experience the power of AI-driven heart attack risk prediction</p>
+                <a href="/predict" class="btn btn-primary btn-large">Start Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-brand">
+                        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                        <span class="brand-name">Heart Attack Prediction</span>
+                    </div>
+                    <p class="footer-description">
+                        AI-powered clinical decision support system for early heart attack risk detection and
+                        prevention.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Features</h4>
+                        <ul>
+                            <li><a href="/predict">Risk Assessment</a></li>
+                            <li><a href="/dashboard">Analytics Dashboard</a></li>
+                            <li><a href="#">Explainable AI</a></li>
+                            <li><a href="#">Real-time Results</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/predict">Get Started</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">How It Works</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Heart Attack Prediction. All rights reserved. | For educational and research purposes
+                    only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

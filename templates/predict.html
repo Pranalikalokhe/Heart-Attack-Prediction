@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Assessment - Heart Attack Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <span class="brand-name">Heart Attack Prediction</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/predict" class="nav-link active">Predict Risk</a></li>
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="predict-section">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Heart Attack Risk Assessment</h1>
+                <p class="page-subtitle">Enter patient clinical data for AI-powered risk prediction</p>
+            </div>
+
+            <div class="predict-container">
+                <!-- Input Form -->
+                <div class="predict-form-container">
+                    <form id="predictionForm" class="prediction-form">
+                        <div class="form-section">
+                            <h3 class="form-section-title">Basic Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="age">Age (years)</label>
+                                    <input type="number" id="age" name="age" min="1" max="120" required>
+                                    <small>Patient's age in years</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sex">Gender</label>
+                                    <select id="sex" name="sex" required>
+                                        <option value="">Select gender</option>
+                                        <option value="1">Male</option>
+                                        <option value="0">Female</option>
+                                    </select>
+                                    <small>Patient's biological gender</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">Cardiac Symptoms</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="cp">Chest Pain Type</label>
+                                    <select id="cp" name="cp" required>
+                                        <option value="">Select type</option>
+                                        <option value="0">Typical Angina</option>
+                                        <option value="1">Atypical Angina</option>
+                                        <option value="2">Non-Anginal Pain</option>
+                                        <option value="3">Asymptomatic</option>
+                                    </select>
+                                    <small>Type of chest pain experienced</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exng">Exercise Induced Angina</label>
+                                    <select id="exng" name="exng" required>
+                                        <option value="">Select option</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                    <small>Chest pain during exercise</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">Vital Signs</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="trtbps">Resting Blood Pressure (mmHg)</label>
+                                    <input type="number" id="trtbps" name="trtbps" min="80" max="220" required>
+                                    <small>Blood pressure at rest</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="chol">Cholesterol (mg/dL)</label>
+                                    <input type="number" id="chol" name="chol" min="100" max="600" required>
+                                    <small>Serum cholesterol level</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="thalachh">Maximum Heart Rate</label>
+                                    <input type="number" id="thalachh" name="thalachh" min="60" max="220" required>
+                                    <small>Maximum heart rate achieved</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="fbs">Fasting Blood Sugar > 120 mg/dL</label>
+                                    <select id="fbs" name="fbs" required>
+                                        <option value="">Select option</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                    <small>Fasting blood sugar level</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">ECG & Cardiac Tests</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="restecg">Resting ECG Results</label>
+                                    <select id="restecg" name="restecg" required>
+                                        <option value="">Select result</option>
+                                        <option value="0">Normal</option>
+                                        <option value="1">ST-T Wave Abnormality</option>
+                                        <option value="2">Left Ventricular Hypertrophy</option>
+                                    </select>
+                                    <small>Resting electrocardiographic results</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="oldpeak">ST Depression</label>
+                                    <input type="number" id="oldpeak" name="oldpeak" min="0" max="7" step="0.1"
+                                        required>
+                                    <small>ST depression induced by exercise</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slp">Slope of Peak Exercise ST</label>
+                                    <select id="slp" name="slp" required>
+                                        <option value="">Select slope</option>
+                                        <option value="0">Upsloping</option>
+                                        <option value="1">Flat</option>
+                                        <option value="2">Downsloping</option>
+                                    </select>
+                                    <small>Slope of peak exercise ST segment</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="caa">Number of Major Vessels</label>
+                                    <select id="caa" name="caa" required>
+                                        <option value="">Select number</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                    <small>Colored by fluoroscopy (0-4)</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="thall">Thalassemia</label>
+                                    <select id="thall" name="thall" required>
+                                        <option value="">Select type</option>
+                                        <option value="0">Null</option>
+                                        <option value="1">Fixed Defect</option>
+                                        <option value="2">Normal</option>
+                                        <option value="3">Reversible Defect</option>
+                                    </select>
+                                    <small>Thalassemia test result</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                </svg>
+                                Analyze Risk
+                            </button>
+                            <button type="reset" class="btn btn-secondary">Reset Form</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Results Panel -->
+                <div id="resultsPanel" class="results-panel" style="display: none;">
+                    <div class="results-header">
+                        <h3>Risk Assessment Results</h3>
+                        <button id="closeResults" class="close-btn">&times;</button>
+                    </div>
+
+                    <div class="risk-indicator">
+                        <div id="riskGauge" class="risk-gauge">
+                            <div class="gauge-value" id="riskValue">0%</div>
+                            <div class="gauge-label" id="riskLabel">Calculating...</div>
+                        </div>
+                    </div>
+
+                    <div class="results-content">
+                        <div class="result-section">
+                            <h4>Clinical Interpretation</h4>
+                            <p id="riskExplanation" class="explanation-text"></p>
+                        </div>
+
+                        <div class="result-section">
+                            <h4>Key Risk Factors</h4>
+                            <div id="riskFactors" class="risk-factors-list"></div>
+                        </div>
+
+                        <div class="result-section">
+                            <h4>Recommendations</h4>
+                            <ul id="recommendations" class="recommendations-list"></ul>
+                        </div>
+                    </div>
+
+                    <div class="results-actions">
+                        <button onclick="window.print()" class="btn btn-secondary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                            </svg>
+                            Print Report
+                        </button>
+                        <button id="newAssessment" class="btn btn-primary">New Assessment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>Analyzing patient data...</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-brand">
+                        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                        <span class="brand-name">Heart Attack Prediction</span>
+                    </div>
+                    <p class="footer-description">
+                        AI-powered clinical decision support system for early heart attack risk detection and
+                        prevention.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Features</h4>
+                        <ul>
+                            <li><a href="/predict">Risk Assessment</a></li>
+                            <li><a href="/dashboard">Analytics Dashboard</a></li>
+                            <li><a href="#">Explainable AI</a></li>
+                            <li><a href="#">Real-time Results</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/predict">Get Started</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">How It Works</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Heart Attack Prediction. All rights reserved. | For educational and research purposes
+                    only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/predict.js') }}"></script>
+</body>
+
+</html>
