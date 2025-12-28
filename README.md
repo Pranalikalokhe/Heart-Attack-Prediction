@@ -276,14 +276,14 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Chart.js for beautiful visualizations
 - scikit-learn for machine learning tools
 - Flask community for excellent documentation
+<img width="1366" height="541" alt="image" src="https://github.com/user-attachments/assets/3e5e211e-6cd4-4f20-a6b2-e5e517e29676" />
+<img width="690" height="487" alt="image" src="https://github.com/user-attachments/assets/7c5b43eb-be4a-4f2d-bcf2-1aedd387657a" />
+<img width="582" height="588" alt="image" src="https://github.com/user-attachments/assets/c0d27c52-93e5-4882-aaa6-fa4d3bb53582" />
+<img width="731" height="610" alt="image" src="https://github.com/user-attachments/assets/b25e4ae1-df0a-4352-aae2-dc5d67a07b00" />
+<img width="527" height="606" alt="image" src="https://github.com/user-attachments/assets/b4df44a6-2b46-401a-9e89-f7b116c65a69" />
 
-## 📞 Support
 
-For questions or support, please:
-- Open an issue on GitHub
-- Email: your.email@example.com
-- Check the documentation files
 
----
 
-**Made with ❤️ for better healthcare through AI**
+
+
