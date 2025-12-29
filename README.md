@@ -1,25 +1,134 @@
-# ❤️ Heart Attack Prediction System
+# ❤️ Heart Attack Analysis and Prediction System
 
-> AI-powered clinical decision support system for heart attack risk prediction and prevention
+**Machine Learning–based clinical decision support system for heart attack risk analysis and prediction**
 
-![Accuracy](https://img.shields.io/badge/Accuracy-95.8%25-success)
+![Accuracy](https://img.shields.io/badge/Accuracy-92%25-success)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
 ![Flask](https://img.shields.io/badge/Flask-2.0+-green)
 ![ML](https://img.shields.io/badge/ML-scikit--learn-orange)
 
+---
+
 ## 📋 Overview
 
-Heart Attack Prediction is a production-grade web application that uses machine learning to predict heart attack risk with **95.8% accuracy**. The system analyzes 13 clinical parameters and provides explainable AI insights to support healthcare professionals in making data-driven decisions.
+The **Heart Attack Analysis and Prediction System** is a machine learning project designed to analyze patient health data, identify key risk factors using data visualization, and predict the likelihood of a heart attack.
 
-## ✨ Features
+The project demonstrates the complete machine learning lifecycle, from exploratory data analysis (EDA) and model comparison to backend deployment for prediction.
 
-- 🎯 **95.8% Accurate Predictions** - Random Forest classifier with cross-validation
-- 🔍 **Explainable AI** - Identifies which factors contribute to risk
-- 📊 **Interactive Dashboard** - 6 comprehensive data visualizations
-- ⚡ **Real-time Results** - Instant risk assessment in seconds
-- 🎨 **Modern UI/UX** - Professional, responsive design
-- 📱 **Mobile Friendly** - Works on all devices
-- 🔐 **Secure** - Built with security best practices
+---
+
+## 🎯 Project Objective
+
+- ✅ Analyze patient medical data to understand key health risk factors
+- ✅ Use data visualization to identify relationships between features
+- ✅ Train and compare multiple machine learning classification models
+- ✅ Select the best-performing model for heart attack risk prediction
+- ✅ Provide a simple application interface for prediction
+
+---
+
+## ✨ Key Features
+
+- 📊 **Exploratory Data Analysis (EDA)** using graphs and correlation heatmaps
+- 🤖 **Multiple ML Models Compared** for fair evaluation
+- 🏆 **Best Model Selection** based on accuracy and cross-validation
+- ⚡ **Real-time Prediction** using a trained ML model
+- 🧩 **Clean Project Structure** separating analysis, training, and prediction
+
+---
+
+## 📁 Project Structure
+
+```
+Heart attack prediction/
+│
+├── notebooks/
+│   └── HeartAttack_Analysis.ipynb   # EDA & model experimentation
+│
+├── backend/
+│   ├── train_model.py               # Final model training & saving
+│   └── app.py                       # Prediction application
+│
+├── templates/
+│   ├── home.html
+│   ├── predict.html
+│   ├── dashboard.html
+│   └── insights.html
+│
+├── static/
+│   ├── css/
+│   └── js/
+│
+├── models/
+│   ├── heart_attack_model.pkl       # Saved trained model
+│   └── scaler.pkl                   # Feature scaler
+│
+└── data/
+    └── heart.csv                    # Dataset
+```
+
+---
+
+## 📊 Exploratory Data Analysis (EDA)
+
+EDA was performed using a Jupyter Notebook to understand the dataset and identify key relationships.
+
+### Visualizations Used:
+
+- **Correlation Heatmaps** – to identify strongly related features
+- **Histograms & Distribution Plots** – to analyze feature spread
+- **Count Plots & Bar Charts** – to compare heart attack vs non-heart attack cases
+
+### Key Insights:
+
+- Age, chest pain type, cholesterol, heart rate, and ECG-related features showed strong influence on heart attack risk
+- EDA helped guide feature understanding and model selection
+
+---
+
+## 🤖 Machine Learning Models Used
+
+The following classification models were trained and evaluated:
+
+| Algorithm | Purpose |
+|-----------|---------|
+| **Logistic Regression** | Baseline binary classification |
+| **Random Forest** | Tree-based ensemble learning |
+| **Gradient Boosting / Boosting-based Model** | Error-focused learning |
+| **Support Vector Machine (SVM)** | Optimal decision boundary |
+
+---
+
+## 🏆 Model Evaluation & Final Selection
+
+### Evaluation Metrics:
+
+- ✅ Accuracy
+- ✅ Confusion Matrix
+- ✅ Cross-validation score
+
+### Final Result:
+
+**Boosting-based model** achieved the best overall performance
+
+**Final Accuracy Achieved: ~92%**
+
+The boosting-based model was selected because it:
+- ✅ Learns from previous misclassifications
+- ✅ Handles complex feature relationships
+- ✅ Shows stable performance across validation folds
+
+---
+
+## 🧠 Project Workflow (High-Level)
+
+1. Data collection and preprocessing
+2. Exploratory Data Analysis (EDA) using graphs
+3. Model experimentation and comparison (Notebook)
+4. Final model training and saving (`train_model.py`)
+5. Prediction using backend application (`app.py`)
+
+---
 
 ## 🚀 Quick Start
 
@@ -32,13 +141,13 @@ Heart Attack Prediction is a production-grade web application that uses machine 
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/heart-attack-prediction.git
-cd heart-attack-prediction
+git clone https://github.com/Pranalikalokhe/Heart-Attack-Prediction.git
+cd Heart-Attack-Prediction
 ```
 
 2. **Install dependencies**
 ```bash
-pip install flask flask-cors pandas numpy scikit-learn
+pip install flask flask-cors pandas numpy scikit-learn matplotlib seaborn
 ```
 
 3. **Train the model** (optional - pre-trained model included)
@@ -57,92 +166,7 @@ python backend/app.py
 http://localhost:5000
 ```
 
-## 📁 Project Structure
-
-```
-Heart attack prediction/
-│
-├── backend/
-│   ├── app.py                 # Flask application
-│   └── train_model.py         # Model training script
-│
-├── templates/
-│   ├── home.html              # Landing page
-│   ├── predict.html           # Risk assessment form
-│   ├── dashboard.html         # Analytics dashboard
-│   └── insights.html          # How it works page
-│
-├── static/
-│   ├── css/
-│   │   └── style.css          # All styling
-│   └── js/
-│       ├── main.js            # Main JavaScript
-│       ├── predict.js         # Prediction logic
-│       └── dashboard.js       # Dashboard charts
-│
-├── models/
-│   ├── heart_attack_model.pkl # Trained ML model
-│   └── scaler.pkl             # Feature scaler
-│
-└── data/
-    └── heart.csv              # Training dataset
-```
-
-## 🤖 Machine Learning
-
-### Algorithms Compared
-
-| Algorithm | Test Accuracy | CV Score |
-|-----------|--------------|----------|
-| **Random Forest** ⭐ | **95.8%** | 94.2% ± 2.1% |
-| Gradient Boosting | 94.5% | 93.8% ± 2.3% |
-| Logistic Regression | 86.7% | 85.9% ± 3.2% |
-| SVM | 89.2% | 88.4% ± 2.8% |
-
-### Feature Importance (Top 5)
-
-1. **Chest Pain Type** - 25%
-2. **Max Heart Rate** - 18%
-3. **ST Depression** - 15%
-4. **Major Vessels** - 12%
-5. **Age** - 10%
-
-## 📊 Performance Metrics
-
-- **Accuracy**: 95.8%
-- **Precision**: 93.8%
-- **Recall**: 96.8%
-- **F1-Score**: 95.2%
-
-## 🎨 Screenshots
-
-### Home Page
-Modern landing page with gradient design and key statistics
-
-### Risk Assessment
-Interactive form for patient data input with real-time validation
-
-### Dashboard
-6 comprehensive charts showing analytics and insights
-
-## 🔧 Technology Stack
-
-### Backend
-- **Flask** - Python web framework
-- **scikit-learn** - Machine learning library
-- **pandas** - Data manipulation
-- **numpy** - Numerical computing
-
-### Frontend
-- **HTML5** - Structure
-- **CSS3** - Styling with modern gradients
-- **JavaScript** - Interactivity
-- **Chart.js** - Data visualization
-
-### Machine Learning
-- **Random Forest** - Primary classifier
-- **StandardScaler** - Feature normalization
-- **Cross-validation** - Model evaluation
+---
 
 ## 📖 Usage
 
@@ -167,6 +191,8 @@ View comprehensive analytics including:
 - Cholesterol and blood pressure trends
 - Model performance metrics
 
+---
+
 ## 🔍 Clinical Parameters
 
 The system analyzes 13 clinical parameters:
@@ -185,103 +211,79 @@ The system analyzes 13 clinical parameters:
 12. **Number of Major Vessels** - 0-4
 13. **Thalassemia** - Blood disorder test
 
-## 🎯 API Endpoints
+---
 
-### POST /api/predict
-Predict heart attack risk
+## 🔧 Technology Stack
 
-**Request Body:**
-```json
-{
-  "age": 55,
-  "sex": 1,
-  "cp": 0,
-  "trtbps": 140,
-  "chol": 250,
-  "fbs": 1,
-  "restecg": 0,
-  "thalachh": 150,
-  "exng": 0,
-  "oldpeak": 2.3,
-  "slp": 0,
-  "caa": 0,
-  "thall": 2
-}
-```
+### Backend
+- **Flask** - Python web framework
+- **scikit-learn** - Machine learning library
+- **pandas** - Data manipulation
+- **numpy** - Numerical computing
 
-**Response:**
-```json
-{
-  "prediction": 1,
-  "risk_probability": 78.5,
-  "risk_category": "High Risk",
-  "risk_color": "#ef4444",
-  "explanation": "Patient shows HIGH risk...",
-  "risk_factors": [...]
-}
-```
+### Frontend
+- **HTML5** - Structure
+- **CSS3** - Styling with modern gradients
+- **JavaScript** - Interactivity
+- **Chart.js** - Data visualization
 
-### GET /api/statistics
-Get dashboard statistics
+### Machine Learning
+- **Boosting-based Model** - Primary classifier
+- **Random Forest** - Ensemble learning
+- **StandardScaler** - Feature normalization
+- **Cross-validation** - Model evaluation
 
-### GET /api/feature-importance
-Get feature importance data
+---
 
-## 🧪 Model Training
+## 📌 Final Conclusion
 
-To retrain the model with your own data:
+This project successfully demonstrates how **exploratory data analysis** and **machine learning** can be combined to predict heart attack risk.
 
-1. Place your dataset in `data/heart.csv`
-2. Run training script:
-```bash
-cd backend
-python train_model.py
-```
+By comparing multiple models and evaluating them carefully, a **boosting-based classifier** achieved approximately **92% accuracy**, making it the most suitable model for this task.
 
-The script will:
-- Load and preprocess data
-- Train 4 different algorithms
-- Evaluate with cross-validation
-- Select best model
-- Save model and scaler
+The project highlights the importance of:
+- ✅ Data understanding
+- ✅ Model comparison
+- ✅ Clean system design in real-world machine learning applications
 
-## 📚 Documentation
-
-- **[Interview Preparation Guide](INTERVIEW_PREPARATION_GUIDE.md)** - Complete project documentation for interviews
-- **[UI Enhancement Summary](UI_ENHANCEMENTS_PHASE2.md)** - UI/UX improvements
-- **[Footer Enhancement](FOOTER_ENHANCEMENT.md)** - Footer redesign details
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+---
 
 ## ⚠️ Disclaimer
 
-This system is for **educational and research purposes only**. It is a decision support tool and should not replace professional medical advice, diagnosis, or treatment. Always consult qualified healthcare professionals for medical decisions.
+This project is developed for **educational and research purposes only**.
 
-## 📄 License
+It is intended as a **decision-support tool** and should **not replace professional medical advice**.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Always consult qualified healthcare professionals for medical decisions.
+
+---
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
+**Pranali Kalokhe**
+
+MSc Data Science
+
+**Skills:** Python | Machine Learning | Data Analysis
+
+- GitHub: [@Pranalikalokhe](https://github.com/Pranalikalokhe)
+- LinkedIn: [Pranali Kalokhe](https://linkedin.com/in/pranali-kalokhe)
+
+---
 
 ## 🙏 Acknowledgments
 
-- Heart disease dataset from UCI Machine Learning Repository
-- Chart.js for beautiful visualizations
-- scikit-learn for machine learning tools
-- Flask community for excellent documentation
+- **UCI Heart Disease Dataset** - For providing the dataset
+- **scikit-learn** - For ML algorithms
+- **Matplotlib & Seaborn** - For visualization
+- **Flask** - For backend application support
+
+---
 
 ## 📞 Support
 
 For questions or support, please:
 - Open an issue on GitHub
-- Email: your.email@example.com
 - Check the documentation files
 
 ---
