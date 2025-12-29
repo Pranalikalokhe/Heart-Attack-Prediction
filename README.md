@@ -250,42 +250,29 @@ The project highlights the importance of:
 
 ## ⚠️ Disclaimer
 
-This project is developed for **educational and research purposes only**.
+This system is for **educational and research purposes only**. It is a decision support tool and should not replace professional medical advice, diagnosis, or treatment. Always consult qualified healthcare professionals for medical decisions.
 
-It is intended as a **decision-support tool** and should **not replace professional medical advice**.
+## 📄 License
 
-Always consult qualified healthcare professionals for medical decisions.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
----
 
-## 👨‍💻 Author
 
-**Pranali Kalokhe**
-
-MSc Data Science
-
-**Skills:** Python | Machine Learning | Data Analysis
-
-- GitHub: [@Pranalikalokhe](https://github.com/Pranalikalokhe)
-- LinkedIn: [Pranali Kalokhe](https://linkedin.com/in/pranali-kalokhe)
-
----
 
 ## 🙏 Acknowledgments
 
-- **UCI Heart Disease Dataset** - For providing the dataset
-- **scikit-learn** - For ML algorithms
-- **Matplotlib & Seaborn** - For visualization
-- **Flask** - For backend application support
+- Heart disease dataset from UCI Machine Learning Repository
+- Chart.js for beautiful visualizations
+- scikit-learn for machine learning tools
+- Flask community for excellent documentation
+<img width="1366" height="541" alt="image" src="https://github.com/user-attachments/assets/3e5e211e-6cd4-4f20-a6b2-e5e517e29676" />
+<img width="690" height="487" alt="image" src="https://github.com/user-attachments/assets/7c5b43eb-be4a-4f2d-bcf2-1aedd387657a" />
+<img width="582" height="588" alt="image" src="https://github.com/user-attachments/assets/c0d27c52-93e5-4882-aaa6-fa4d3bb53582" />
+<img width="731" height="610" alt="image" src="https://github.com/user-attachments/assets/b25e4ae1-df0a-4352-aae2-dc5d67a07b00" />
+<img width="527" height="606" alt="image" src="https://github.com/user-attachments/assets/b4df44a6-2b46-401a-9e89-f7b116c65a69" />
 
----
 
-## 📞 Support
 
-For questions or support, please:
-- Open an issue on GitHub
-- Check the documentation files
 
----
 
-**Made with ❤️ for better healthcare through AI**
+
